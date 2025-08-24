@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Phase Tracker</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom font import for the entire app */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    </style>
+</head>
+<body class="text-white flex flex-col items-center justify-center min-h-screen p-4">
+
+    <!-- Main App Container -->
+    <div class="w-full max-w-2xl bg-slate-900 rounded-2xl shadow-2xl p-8 md:p-12 text-center border border-slate-700">
+        
+        <!-- Header -->
+        <h1 class="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-sky-400">
+            Moon Phase Tracker
+        </h1>
+        <p class="text-gray-400 mb-8 md:mb-12">See today's moon phase and a 7-day forecast.</p>
+
+        <!-- Today's Moon Phase Section -->
+        <div id="today-moon" class="flex flex-col items-center mb-10">
+            <h2 class="text-xl md:text-2xl font-semibold mb-4 text-gray-300">Today's Moon Phase</h2>
+            <div id="today-image" class="moon-image mb-2 glowing-shadow"></div>
+            <div id="today-label" class="text-lg md:text-xl font-medium text-gray-200"></div>
+            <div id="today-date" class="text-sm md:text-base font-light text-gray-400 mt-2"></div>
+        </div>
+
+        <!-- Next 7 Days Button -->
+        <button id="show-forecast-btn" class="mb-10 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Show Next 7 Days
+        </button>
+
+        <!-- 7-Day Forecast Section -->
+        <div id="forecast-container" class="hidden">
+            <h2 class="text-xl md:text-2xl font-semibold mb-6 text-gray-300">Next 7 Days</h2>
+            <div id="forecast-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 justify-items-center">
+                <!-- Forecast items will be injected here by JavaScript -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js" defer></script>
+</body>
+</html>

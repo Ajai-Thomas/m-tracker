@@ -1,0 +1,35 @@
+/* This is the main stylesheet for the Moon Phase Tracker app.
+   It contains custom styles that are not part of the Tailwind CSS framework. */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0b1a2b; /* Dark, space-themed background */
+}
+
+/* Keyframes animation for a pulsating glow effect */
+@keyframes pulse-glow {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); }
+    50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); }
+    100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); }
+}
+
+/* Styles for today's moon image/emoji */
+.moon-image {
+    font-size: 10rem; /* Large size for today's moon */
+    line-height: 1;
+    animation: pulse-glow 3s infinite ease-in-out; /* Apply the pulse-glow animation */
+}
+
+/* Styles for the 7-day forecast moon icons */
+.moon-icon {
+    font-size: 3rem; /* Smaller size for 7-day forecast */
+    line-height: 1;
+    /* This class will be used for the staggered fade-in animation */
+    opacity: 0;
+    transition: opacity 0.5s ease-in, transform 0.3s ease-in-out;
+}
+
+.moon-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
